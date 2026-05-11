@@ -9,9 +9,11 @@ Le projet fonctionne avec une clé OpenAI valide, mais il reste testable sans cl
 
 ## Aperçu
 
-![Accueil Streamlit](docs/screenshots/streamlit-home.png)
+<img width="1440" height="1000" alt="image" src="https://github.com/user-attachments/assets/2a21e249-8eaa-48e5-8ec0-36df54f91ed0" />
 
-![Conversation Agentic RAG](docs/screenshots/streamlit-chat.png)
+
+<img width="1440" height="1100" alt="image" src="https://github.com/user-attachments/assets/747678cc-bdc7-41a9-9f2c-8389d8b02759" />
+
 
 ## Fonctionnalités
 
