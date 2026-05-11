@@ -152,19 +152,22 @@ def generate_answer(state: AgenticRagState) -> dict:
     llm = _get_llm()
 
     if llm and documents:
-        response = llm.invoke(
-            [
-                SystemMessage(
-                    content=(
-                        "Tu es un assistant RAG. Reponds en francais, uniquement avec le "
-                        "contexte fourni. Cite les titres des sources utilisees. Si le "
-                        "contexte est insuffisant, dis-le clairement."
-                    )
-                ),
-                HumanMessage(content=f"Question: {state['question']}\n\nContexte:\n{context}"),
-            ]
-        )
-        answer = response.content
+        try:
+            response = llm.invoke(
+                [
+                    SystemMessage(
+                        content=(
+                            "Tu es un assistant RAG. Reponds en francais, uniquement avec le "
+                            "contexte fourni. Cite les titres des sources utilisees. Si le "
+                            "contexte est insuffisant, dis-le clairement."
+                        )
+                    ),
+                    HumanMessage(content=f"Question: {state['question']}\n\nContexte:\n{context}"),
+                ]
+            )
+            answer = response.content
+        except Exception:
+            answer = _extractive_answer(state["question"], documents)
     else:
         answer = _extractive_answer(state["question"], documents)
 

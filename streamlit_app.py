@@ -85,22 +85,26 @@ def inject_styles() -> None:
 
         .metric-strip {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.75rem;
+            grid-template-columns: 1fr;
+            gap: 0.55rem;
             margin: 0 0 1.2rem;
         }
 
         .metric-box {
+            align-items: center;
             background: var(--surface);
             border: 1px solid var(--line);
             border-radius: 8px;
-            padding: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            min-height: 2.8rem;
+            padding: 0.65rem 0.75rem;
         }
 
         .metric-label {
             color: var(--muted);
             font-size: 0.78rem;
-            margin-bottom: 0.18rem;
+            margin-bottom: 0;
         }
 
         .metric-value {
